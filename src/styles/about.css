@@ -1,0 +1,135 @@
+.about {
+  padding: 40px 0;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+.about-card {
+  background: rgba(20,20,20,0.45);
+  border: 1px solid rgba(255,255,255,0.12);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 22px;
+  box-shadow: 0 10px 30px var(--card-shadow);
+  text-align: center;
+}
+
+.about-card h1 {
+  margin: 0 0 8px;
+  font-size: 22px;
+}
+.about-container {
+  width: 100%;
+  min-height: 100vh;
+  padding: 6rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.about-body {
+  max-width: 900px;
+  background: rgba(0, 0, 0, 0.55); 
+  backdrop-filter: blur(8px);
+  padding: 2rem;
+  border-radius: 16px;
+}
+
+/* FIX — make all text visible */
+.about-body,
+.about-body p,
+.about-body h2,
+.about-body h3,
+.about-card p,
+.about-card li {
+  color: var(--text) !important;
+}
+
+.about-card {
+  padding: 1rem;
+  margin-top: 1rem;
+  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(6px);
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+
+.role {
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.contact-quick a {
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.links-row {
+  /* color: rgb(9, 9, 48); */
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+.links-row a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.download-resume {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 8px 12px;
+  background: linear-gradient(90deg, var(--accent-2), var(--accent));
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.about-body h2 {
+  margin-top: 0;
+  color: var(--accent);
+}
+
+.about-body p {
+  color: var(--muted);
+}
+
+.skill-list,
+.projects-list,
+.cert-list {
+  margin-top: 12px;
+  padding-left: 16px;
+  color: var(--muted);
+}
+
+.skill-list li,
+.projects-list li,
+.cert-list li {
+  margin-bottom: 8px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 880px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-card {
+    order: 2;
+  }
+
+  .about-body {
+    order: 1;
+  }
+}

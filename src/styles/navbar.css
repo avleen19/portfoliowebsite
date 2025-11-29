@@ -1,0 +1,130 @@
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+
+  /* Darker, premium glass */
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 2px 18px rgba(0,0,0,0.55);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 14px 22px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Brand */
+.logo {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--accent);
+  text-decoration: none;
+  letter-spacing: 0.5px;
+}
+
+/* Links */
+.nav-links {
+  margin-left: auto;
+  display: flex;
+  gap: 26px;
+  align-items: center;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  font-size: 1rem;
+  transition: 0.25s ease;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.nav-links a:hover {
+  background: rgba(255,255,255,0.1);
+  color: var(--accent);
+  backdrop-filter: blur(4px);
+}
+
+/* Resume Button */
+.resume-btn {
+  background: linear-gradient(135deg, var(--accent-2), var(--accent));
+  padding: 8px 14px;
+  border-radius: 10px;
+  color: #fff !important;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.resume-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+/* ============================
+           MOBILE
+============================ */
+
+.hamburger {
+  display: none;
+  background: transparent;
+  border: none;
+  color: var(--text);
+  cursor: pointer;
+  font-size: 1.7rem;
+}
+
+@media (max-width: 880px) {
+  .hamburger {
+    display: inline-flex;
+  }
+
+  .nav-links {
+    position: fixed;
+    right: 16px;
+    top: 72px;
+
+    width: calc(100% - 32px);
+    max-width: 330px;
+
+    background: rgba(0,0,0,0.75);
+    backdrop-filter: blur(14px);
+    padding: 18px;
+    border-radius: 14px;
+
+    flex-direction: column;
+    gap: 16px;
+
+    border: 1px solid rgba(255,255,255,0.15);
+    box-shadow: 0 10px 35px rgba(0,0,0,0.5);
+
+    opacity: 0;
+    transform: translateY(-8px);
+    pointer-events: none;
+
+    transition: opacity .25s ease, transform .25s ease;
+  }
+
+  .nav-links a {
+    font-size: 1.1rem;
+  }
+
+  .nav-links.open {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+}
