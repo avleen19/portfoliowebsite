@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; // Add BrowserRouter
 import AOS from "aos";
 
 import Navbar from "./components/Navbar";
@@ -16,7 +16,7 @@ export default function App() {
   }, []);
 
   return (
-    <>
+    <Router>
       <Navbar />
       <main className="page-container">
         <Routes>
@@ -27,6 +27,6 @@ export default function App() {
         </Routes>
       </main>
       <Footer />
-    </>
+    </Router>
   );
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom"; // import Link
 import "../styles/home.css";
 import icon from "../assets/icon.jpg"; 
 
@@ -19,7 +20,7 @@ export default function Home() {
           Strong in full-stack architecture, REST APIs and DSA.
         </p>
 
-        <a href="/projects" className="btn">View My Work</a>
+        <Link to="/projects" className="btn">View My Work</Link>
       </div>
 
       <div className="home-right">
