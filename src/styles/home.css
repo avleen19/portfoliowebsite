@@ -1,115 +1,154 @@
-.home {
-  width: 100%;
-  height: 90vh;
-  padding: 0 3rem;
+/* ===== HERO SECTION ===== */
+
+.hero {
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: relative;
+  padding: 0 8%;
+  background: #020617;
+  color: white;
+  overflow: hidden;
 }
 
-/* Overlay to make text readable */
-.home::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.55);
-  backdrop-filter: blur(2px);
-  z-index: 1;
+/* LEFT SIDE */
+.hero-left {
+  max-width: 600px;
 }
 
-/* CONTENT LAYERS */
-.home-left, .home-right {
-  position: relative;
-  z-index: 2;
+.intro {
+  color: #00ffaa;
+  font-weight: 500;
+  margin-bottom: 10px;
 }
 
-.home-left {
-  max-width: 560px;
-}
-
-/* Hero text */
-.home-left h1 {
-  font-size: 50px;
-  font-weight: 700;
-  line-height: 1.05;
-  margin: 0 0 12px;
+.hero h1 {
+  font-size: 4.5rem;
+  font-weight: 800;
+  line-height: 1.1;
 }
 
 .highlight {
-  color: var(--accent);
-  text-shadow: 0 0 18px rgba(96,165,250,0.45);
+  color: transparent;
+  -webkit-text-stroke: 2px #00ffaa;
 }
 
-.lead {
-  color: #efefef;
-  margin-top: 6px;
+.role {
+  font-size: 1.3rem;
+  color: #94a3b8;
+  margin: 20px 0;
 }
 
-.sub {
-  color: #d1d1d1;
-  margin-top: 10px;
-  max-width: 450px;
+.description {
+  color: #cbd5e1;
+  margin-bottom: 30px;
+  line-height: 1.6;
 }
 
-/* BUTTON */
-.btn {
-  margin-top: 22px;
-  padding: 12px 20px;
-  background: linear-gradient(90deg, var(--accent-2), var(--accent));
-  color: white;
-  border-radius: 10px;
-  text-decoration: none;
+/* BUTTONS */
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.primary-btn {
+  padding: 14px 32px;
+  background: linear-gradient(90deg, #00ffaa, #00cc88);
+  border-radius: 8px;
+  color: #020617;
   font-weight: 600;
-  display: inline-block;
-  transition: .25s;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 0 20px rgba(0,255,170,0.4);
 }
 
-.btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 5px 18px rgba(96,165,250,0.35);
+.primary-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 30px rgba(0,255,170,0.6);
 }
 
-/* RIGHT SIDE GLASS PROFILE */
-.home-right {
+.secondary-btn {
+  padding: 14px 32px;
+  border-radius: 8px;
+  border: 2px solid #00ffaa;
+  background: transparent;
+  color: #00ffaa;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.secondary-btn:hover {
+  background: #00ffaa;
+  color: #020617;
+}
+
+/* SOCIAL LINKS */
+.socials {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  gap: 20px;
 }
 
-.profile-glass {
-  width: 260px;
-  height: 260px;
-  border-radius: 50%;
-  overflow: hidden;
-  background: rgba(255,255,255,0.1);
-  border: 1px solid rgba(255,255,255,0.18);
-  backdrop-filter: blur(8px);
-  box-shadow: 0 10px 40px rgba(0,0,0,0.35);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.socials a {
+  color: #94a3b8;
+  text-decoration: none;
+  transition: 0.3s;
 }
 
-.profile-glass img {
+.socials a:hover {
+  color: #00ffaa;
+}
+
+/* RIGHT SIDE GLOW EFFECT */
+.hero-right {
+  position: relative;
+  width: 400px;
+  height: 400px;
+}
+
+.glow-circle {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  background: radial-gradient(circle, #00ffaa 0%, transparent 70%);
+  filter: blur(120px);
+  animation: pulse 4s infinite ease-in-out;
 }
 
-/* RESPONSIVE */
-@media (max-width: 880px) {
-  .home {
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.6; }
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 1024px) {
+  .hero h1 {
+    font-size: 3.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
     flex-direction: column;
+    justify-content: center;
     text-align: center;
-    padding-top: 120px;
   }
 
-  .home-right {
-    margin-top: 22px;
+  .hero-right {
+    display: none;
   }
 
-  .home-left h1 {
-    font-size: 38px;
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .socials {
+    justify-content: center;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
   }
 }

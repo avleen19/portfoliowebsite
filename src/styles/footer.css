@@ -1,3 +1,6 @@
-.bottom{
-    color: rgb(31, 31, 31);
+footer {
+  text-align: center;
+  padding: 30px;
+  border-top: 1px solid rgba(0,255,170,0.2);
+  color: #94a3b8;
 }

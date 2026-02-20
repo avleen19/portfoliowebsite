@@ -1,74 +1,76 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
-
-/* THEME VARIABLES */
-:root {
-  --bg: #0d0d0d;
-  --panel: rgba(17, 17, 17, 0.55);
-  --muted: #c4c4c4;
-  --text: #ffffff;
-  --accent: #60a5fa;
-  --accent-2: #2563eb;
-  --card-shadow: rgba(37, 99, 235, 0.18);
-}
-
-/* LIGHT THEME */
-:root[data-theme="light"] {
-  --bg: #f7f8fb;
-  --panel: #ffffffcc;
-  --muted: #444;
-  --text: #121212;
-  --accent: #1366d6;
-  --accent-2: #0b5ed7;
-  --card-shadow: rgba(0, 0, 0, 0.08);
-}
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap');
 
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-html, body, #root {
-  height: 100%;
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  margin: 0;
-  color: var(--text);
-  font-family: "Poppins", sans-serif;
-  line-height: 1.5;
-  transition: background .3s ease, color .3s ease;
-
-  /* WALLPAPER */
-  background-image: url("../assets/bg4.avif");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  font-family: 'Space Grotesk', sans-serif;
+  background-color: #020617;
+  color: #cbd5e1;
 }
 
-/* GENERAL PAGE CONTAINER */
-.page-container {
-  padding-top: 88px;
-  min-height: calc(100vh - 120px);
-  max-width: 1200px;
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
+/* Section */
+section {
+  padding: 100px 10%;
+  min-height: 100vh;
+  scroll-margin-top: 100px;
 }
 
-.lead {
-  font-size: 18px;
-  color: var(--muted);
+/* Background Grid */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0,255,170,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,255,170,0.05) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  z-index: -1;
 }
 
-.sub {
-  color: var(--muted);
-  margin-top: 8px;
-}
-
-/* BADGE */
-.badge {
-  padding: 6px 10px;
-  background: rgba(96,165,250,0.12);
-  color: var(--accent);
-  border-radius: 6px;
+/* Primary Button */
+.primary-btn {
+  display: inline-block;
+  text-decoration: none;
+  padding: 12px 28px;
+  background: linear-gradient(90deg, #00ffaa, #00cc88);
+  border-radius: 8px;
+  color: #020617;
   font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 0 20px rgba(0,255,170,0.5);
+}
+
+.primary-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 30px rgba(0,255,170,0.7);
+}
+
+/* Secondary Button */
+.secondary-btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border: 1px solid #00ffaa;
+  border-radius: 8px;
+  color: #00ffaa;
+  background: transparent;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.secondary-btn:hover {
+  background: #00ffaa;
+  color: #020617;
 }

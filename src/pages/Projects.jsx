@@ -5,10 +5,14 @@ import { projects } from "../data";
 
 export default function Projects() {
   return (
-    <section className="projects" data-aos="fade-up">
-      <h2 className="heading">My Projects</h2>
-      <div className="project-grid">
-        {projects.map((p, i) => <ProjectCard key={i} project={p} />)}
+    <section id="projects" className="projects">
+      <div className="projects-container">
+        <h2 className="section-title">Featured Projects</h2>
+        <div className="project-grid">
+          {projects.map((p, i) => (
+            <ProjectCard key={i} project={p} />
+          ))}
+        </div>
       </div>
     </section>
   );
