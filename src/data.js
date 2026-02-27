@@ -2,7 +2,7 @@ import sherise from "./assets/SheRise.jpg";
 import medimart from "./assets/Medimart.jpg";
 import urbanest from "./assets/urbanNest.jpg";
 import fetal from "./assets/fetal.jpg";
-import criksy from "./assets/criksy.png";
+import criksy from "./assets/Criksy.png";
 
 export const projects = [
   {
