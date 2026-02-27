@@ -2,8 +2,17 @@ import sherise from "./assets/SheRise.jpg";
 import medimart from "./assets/Medimart.jpg";
 import urbanest from "./assets/urbanNest.jpg";
 import fetal from "./assets/fetal.jpg";
+import criksy from "./assets/criksy.jpg";
 
 export const projects = [
+  {
+    title: "Criksy",
+    description:
+      "Real-time multiplayer cricket trivia platform with live leaderboard and WebSocket sync.",
+    tech: "React • Node • Express • MongoDB • Socket.io • Clerk",
+    link: "https://criksy-f.onrender.com/", 
+    image: criksy,
+  },
   {
     title: "SheRise",
     description:
